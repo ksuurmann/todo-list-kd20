@@ -1,33 +1,33 @@
 // define variables
 const form = document.querySelector('#task-form');
 const taskInput = document.querySelector('#task');
-const taskList = document.querySelector('collection');
-//define event listeners
-//add task to list- submit button
+const taskList = document.querySelector('.collection');
+// define event listeners
+// add task to list - submit button
 form.addEventListener('submit', addTask);
 
-//addTask function
+// addTask function
 function addTask(e) {
     if (taskInput.value === '') {
-        alert("Add new task")
+        alert("Add new task!")
     } else {
-        //crate li
+        // create li
         const li = document.createElement('li');
-        //add class
+        // add class
         li.className = 'collection-item';
-        //add inputValue
+        // add input value
         li.appendChild(document.createTextNode(taskInput.value));
-        //link for element removal
+        // link for element removing
         const link = document.createElement('a');
-        //add css to link
+        // add css to link
         link.className = 'secondary-content';
-        //add fas icon
+        // add fas icon
         link.innerHTML = '<i class="fas fa-backspace"></i>';
-        //add link into li
+        // add link into li
         li.appendChild(link);
-        //add li into ul
+        // add li into ul
         taskList.appendChild(li);
-        //clear task input
+        // clear task input
         taskInput.value = '';
         e.preventDefault();
     }
